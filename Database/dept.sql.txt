@@ -1,0 +1,32 @@
+===Database employee_database
+
+== Table structure for table dept
+
+|------
+|Column|Type|Null|Default
+|------
+|//**id**//|int(2)|No|
+|EMPNO|int(10)|No|
+|ENAME|varchar(50)|No|
+|JOB|varchar(100)|No|
+|MGR|int(20)|No|
+|HIREDATE|date|No|
+|SAL|int(30)|No|
+|COMM|int(30)|No|
+|DEPTNO|int(30)|No|
+== Dumping data for table dept
+
+|1|7369|Smith|Clerk|7698|1980-12-17|1600|300|30
+|2|7499|Allen|Salesman|7698|1981-02-20|1600|300|30
+|3|7521|Ward|Salesman|7698|1981-02-22|1250|500|30
+|4|7566|Jones|Manager|7839|1981-04-02|2975|0|20
+|5|7654|Martin|Salesman|7698|1981-09-28|1250|1400|30
+|6|7698|Blake|Manager|7839|1981-05-01|2850|0|30
+|7|7782|Clark|Manager|7839|1981-06-09|2450|0|10
+|8|7788|Scott|Analyst|7566|1982-12-09|3000|0|20
+|9|7839|King|President|0|1981-11-17|5000|0|10
+|10|7844|Turner|Salesman|7698|1981-09-08|1500|0|30
+|11|7876|Adams|Clerk|7788|1983-01-12|1100|0|20
+|12|7900|James|Clerk|7698|1981-12-03|950|0|30
+|13|7902|Ford|Analyst|7566|1981-12-04|3000|0|20
+|14|7934|Miller|Clerk|7782|1982-01-23|1300|0|10

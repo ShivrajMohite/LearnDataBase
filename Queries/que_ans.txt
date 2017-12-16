@@ -1,0 +1,106 @@
+1.List the names of analysts and salesman.
+=> SELECT ENAME FROM dept WHERE JOB = 'Salesman' OR JOB = 'Analyst'
+
+2.List details of employees who have joined before 30 Sep 81. 
+=> SELECT * FROM `dept` WHERE HIREDATE <('1981-9-30');
+
+3.List names of employees who are not managers.
+=> SELECT ENAME FROM `dept` WHERE JOB != 'Manager'.
+
+4.List the names of employees whose employee numbers are 7369, 7521, 7839, 7934, 7788.
+=> SELECT ENAME FROM `dept` WHERE EMPNO = 7369 OR EMPNO = 7521 OR EMPNO = 7839 OR EMPNO =7934 OR EMPNO =7788
+
+5.List employees not belonging to department 30, 40, or 10. 
+=> SELECT * FROM `dept` WHERE DEPTNO != 30 AND DEPTNO != 40 AND DEPTNO != 10
+
+6.List employee names for those who have joined between 30 June and 31 Dec. ‘81.
+=> SELECT * FROM `dept` WHERE HIREDATE BETWEEN ('1981-6-30') AND ('1981-12-31')
+
+7.List the different designations in the company
+=>SELECT DISTINCT JOB FROM dept
+
+8.List the names of employees who are not eligible for commission. 
+=> SELECT ENAME EJOB FROM `dept` WHERE COMM = 0
+
+9.List the name and designation of the employee who does not report to anybody.
+=> SELECT JOB FROM `dept` WHERE MGR =0
+
+10.List the employees not assigned to any department.  
+=>SELECT ENAME FROM `dept` WHERE DEPTNO != 0
+
+11.List the employees who are eligible for commission.
+=>SELECT * FROM `dept` WHERE COMM !=0
+
+12.List employees whose names either start or end with “S”. 
+=> SELECT ENAME FROM `dept` WHERE ENAME LIKE 'S%' OR ENAME LIKE '%S'
+ 
+13.List names of employees whose names have “i” as the second character.
+=> SELECT ENAME FROM `dept` WHERE ENAME LIKE '_i%'
+
+14.List the number of employees working with the company.
+=>SELECT EMPNO FROM dept
+
+15.List the number of designations available in the EMP table 
+=>SELECT MGR FROM dept WHERE MGR !=0
+
+16.List the total salaries paid to the employees. 
+=>SELECT SAL FROM dept
+
+17.List the maximum, minimum and average salary in the company.
+=> SELECT MAX(SAL),MIN(SAL),AVG(SAL) FROM dept .
+
+18.List the maximum salary paid to a salesman.
+=> SELECT MAX(SAL) FROM dept WHERE JOB = 'Salesman'
+
+19.List the number of employees and average salary for employees in department 20.
+=> SELECT COUNT(*) AS NUM_EMP, AVG(SAL) FROM dept WHERE DEPTNO=20
+
+20.List name, salary and PF amount of all employees. (PF is calculated as 10% of basic salary)   => SELECT ENAME, SAL*.10PF FROM `dept`
+
+21.List names of employees who are more than 2 years old in the company.
+=>SELECT ENAME FROM dept WHERE HIREDATE > (SELECT DATE_ADD((SELECT MIN(HIREDATE) FROM dept), INTERVAL 24 MONTH))
+
+22.List the employee details in the ascending order of their basic salary
+=> SELECT * FROM `dept` ORDER BY SAL ASC
+
+23.List the employee name and hire date in the descending order of the hire date. 
+=> SELECT * FROM `dept` ORDER BY HIREDATE DESC
+
+24.List employee name, salary, PF, HRA, DA and gross; order the results in the ascending order of gross. HRA is 50% of the salary and DA is 30% of the salary.
+=>
+
+
+25.List the department numbers and number of employees in each department.
+=> SELECT DEPTNO ,EMPNO FROM `dept`
+
+26.List the department number and total salary payable in each department 
+=> SELECT DEPTNO , SUM(SAL) FROM `dept` GROUP BY DEPTNO
+
+27.List the jobs and number of employees in each job. The result should be in the descending order of the number of employees. 
+=> SELECT JOB , EMPNO FROM `dept` ORDER BY EMPNO DESC
+
+28.List the total salary, maximum and minimum salary and average salary of the employees jobwise.
+=> SELECT SUM(SAL), MIN(SAL),MAX(SAL),AVG(SAL), JOB FROM `dept`GROUP BY JOB
+
+29.List the total salary, maximum and minimum salary and average salary of the employees jobwise, for department 20 and display only those rows having an average salary > 1000
+=> SELECT SUM(SAL), MIN(SAL),MAX(SAL),AVG(SAL) as AVG_SAL, JOB, DEPTNO FROM `dept`  WHERE DEPTNO = 20 GROUP BY JOB HAVING AVG(SAL) > 1200
+
+30.List the total salary, maximum and minimum salary and average salary of the employees, for department 20.
+=> SELECT SUM(SAL),MIN(SAL),MAX(SAL),AVG(SAL) FROM 'dept'  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+ 
